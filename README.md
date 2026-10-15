@@ -6,6 +6,8 @@ A visual editor for [REST Client](https://marketplace.visualstudio.com/items?ite
 
 Studio is an editor for the same plain-text files. Every change is written back to the file in REST Client syntax, and lines you didn't touch are kept byte for byte. You can switch between Studio and the text editor at any time, and keep using REST Client on the same files.
 
+Read the introduction on my blog: [REST Client Studio: a Postman-style editor for your .http files in VS Code](https://rizwanansari.net/rest-client-studio-a-postman-style-editor-for-your-http-files-in-vs-code/).
+
 ![REST Client Studio editing a JSON request, with the response below](docs/screenshots/editor.png)
 
 ## Opening a file

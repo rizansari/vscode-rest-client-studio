@@ -1,8 +1,8 @@
 {
   "name": "rest-client-studio",
-  "displayName": "REST Client Studio",
+  "displayName": "Rest Studio for VS Code",
   "description": "A visual editor for REST Client .http / .rest files: edit, run, environments, auth, cookies, history and code generation.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "RizwanAnsari",
   "license": "MIT",
   "icon": "images/icon.png",

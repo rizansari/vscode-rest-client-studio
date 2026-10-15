@@ -1,0 +1,54 @@
+@baseUrl = https://httpbin.org
+@token = abc\n123
+
+### Get things
+# @name getThings
+// a description comment
+GET {{baseUrl}}/get
+    ?page=1
+    &size={{size}}
+    # &debug=true
+Accept: application/json
+# X-Disabled: yes
+
+### Create
+# @note
+POST {{baseUrl}}/post HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "x"
+}
+
+# trailing comment for create
+
+###
+POST {{baseUrl}}/post
+Content-Type: application/x-www-form-urlencoded
+
+a=1
+&b=2
+# &c=3
+
+### GraphQL
+POST https://api.example.com/graphql
+X-Request-Type: GraphQL
+
+query Q($id: ID!) { node(id: $id) { id } }
+
+{ "id": "1" }
+
+### curl
+curl -X GET "https://httpbin.org/anything" -H "Accept: */*"
+
+### Upload
+POST {{baseUrl}}/post
+Content-Type: application/octet-stream
+
+< ./payload.bin
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"pasted":"response"}

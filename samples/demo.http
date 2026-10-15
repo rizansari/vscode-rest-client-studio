@@ -1,0 +1,61 @@
+# REST Client Studio demo. Open with: right-click > Open With... > REST Client Studio
+@baseUrl = https://httpbin.org
+@contentType = application/json
+
+### Get with query params
+# @name getThings
+GET {{baseUrl}}/get
+    ?page=1
+    &size=20
+    # &debug=true
+Accept: {{contentType}}
+
+### Create JSON
+POST {{baseUrl}}/post
+Content-Type: {{contentType}}
+Authorization: Bearer {{getThings.response.body.$.headers.Host}}
+
+{
+  "id": "{{$guid}}",
+  "createdAt": "{{$datetime iso8601}}",
+  "amount": {{$randomInt 1 100}}
+}
+
+### Form
+POST {{baseUrl}}/post
+Content-Type: application/x-www-form-urlencoded
+
+name=studio
+&kind=demo
+# &disabled=true
+
+### Basic auth
+GET {{baseUrl}}/basic-auth/user/passwd
+Authorization: Basic user passwd
+
+### Digest auth
+GET {{baseUrl}}/digest-auth/auth/user/passwd
+Authorization: Digest user passwd
+
+### Cookies
+GET {{baseUrl}}/cookies/set?session=abc123
+
+### Image response
+GET {{baseUrl}}/image/png
+
+### GraphQL
+POST https://countries.trevorblades.com/
+X-Request-Type: graphql
+Content-Type: application/json
+
+query Country($code: ID!) { country(code: $code) { name capital currency } }
+
+{ "code": "SE" }
+
+### Ask before sending
+# @note This deletes things
+# @prompt reason Why are you deleting?
+DELETE {{baseUrl}}/delete?reason={{reason}}
+
+### curl
+curl -X GET "https://httpbin.org/headers" -H "X-From-Curl: yes"

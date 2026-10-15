@@ -1,8 +1,12 @@
+<p align="center"><img src="docs/banner.png" alt="REST Client Studio" width="640"></p>
+
 # REST Client Studio
 
 A visual editor for [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) `.http` and `.rest` files.
 
 Studio is an editor for the same plain-text files. Every change is written back to the file in REST Client syntax, and lines you didn't touch are kept byte for byte. You can switch between Studio and the text editor at any time, and keep using REST Client on the same files.
+
+![REST Client Studio editing a JSON request, with the response below](docs/screenshots/editor.png)
 
 ## Opening a file
 
@@ -31,6 +35,32 @@ Saving, undo/redo and dirty markers behave as in any VS Code editor. Edits made 
 | Cookies | View and delete cookies in the jar | `~/.rest-client/cookie.json` |
 
 Shortcuts: <kbd>Ctrl/Cmd</kbd>+<kbd>Enter</kbd> sends the selected request. <kbd>Ctrl/Cmd</kbd>+<kbd>S</kbd> saves.
+
+## Screenshots
+
+**Query params and variables.** Disabled params stay in the file as comments, and the Variables panel edits `@name = value` lines.
+
+![Params table with a disabled param, and the Variables panel](docs/screenshots/params.png)
+
+**Authorization and history**
+
+![Bearer token auth tab and the request history](docs/screenshots/auth.png)
+
+**Headers and response timeline**
+
+![Headers table and the timing breakdown of a response](docs/screenshots/timeline.png)
+
+**Environments**
+
+![Environment editor with $shared, local and production](docs/screenshots/environments.png)
+
+**Code generation**
+
+![Generate code snippet dialog showing a curl command](docs/screenshots/codegen.png)
+
+**Light theme.** Studio follows your VS Code color theme.
+
+![Form body editor in a light theme](docs/screenshots/light.png)
 
 ## Compatibility with REST Client
 

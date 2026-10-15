@@ -5,6 +5,11 @@
   "version": "0.1.0",
   "publisher": "RizwanAnsari",
   "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#071D3A",
+    "theme": "dark"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rizansari/vscode-rest-client-studio.git"
